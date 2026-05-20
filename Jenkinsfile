@@ -1,13 +1,9 @@
 pipeline {
-    agent {
-        node {
-            label 'built-in'
-        }
-    }
+    agent any
+
     stages {
         stage('Fetch Code from SCM') {
             steps {
-                // This tells Jenkins to cleanly pull the GitHub repo configured in the UI
                 checkout scm
                 echo 'Source code synchronized successfully on Amazon Linux host.'
             }
