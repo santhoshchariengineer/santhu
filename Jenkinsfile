@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { label 'built-in' }
 
     stages {
         stage('Fetch Code from SCM') {
@@ -13,7 +13,8 @@ pipeline {
             steps {
                 script {
                     if (fileExists('index.html')) {
-                        sh 'grep -q "</html>" index.html'
+                        // Using standard basic strings for maximum compatibility
+                        sh 'grep "</html>" index.html'
                         echo 'HTML markup validation processing passed.'
                     } else {
                         error 'Critical Failure: Target build index.html missing.'
