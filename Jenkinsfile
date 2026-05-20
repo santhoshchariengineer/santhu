@@ -1,6 +1,9 @@
 pipeline {
-    agent any
-
+    agent {
+        node {
+            label 'built-in'
+        }
+    }
     stages {
         stage('Fetch Code from SCM') {
             steps {
