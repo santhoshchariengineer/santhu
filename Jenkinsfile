@@ -4,7 +4,6 @@ pipeline {
     stages {
         stage('Fetch Code from SCM') {
             steps {
-                // Jenkins automatically checks out code at the start of a global agent pipeline
                 echo 'Source code synchronized successfully on Amazon Linux host.'
             }
         }
@@ -25,6 +24,14 @@ pipeline {
         stage('Store Production Asset') {
             steps {
                 archiveArtifacts artifacts: 'index.html', fingerprint: true
+            }
+        }
+
+        stage('Deploy to Nginx Web Server') {
+            steps {
+                // Copies the verified file directly to Nginx's live web root directory
+                sh 'cp index.html /usr/share/nginx/html/'
+                echo 'Deployment Successful! Code is now live on Nginx.'
             }
         }
     }
