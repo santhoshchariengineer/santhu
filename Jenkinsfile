@@ -27,7 +27,7 @@ pipeline {
                 sh 'cp index.html /usr/share/nginx/html/'
                 
                 // 2. Move your photo file to Nginx's web root
-                sh 'cp image0.jpg /usr/share/nginx/html/'
+                sh 'cp image0.png /usr/share/nginx/html/'
                 
                 echo 'Deployment Successful! Code and profile image are live.'
             }
