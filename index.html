@@ -1,10 +1,147 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My E-Commerce Test Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santhosh | Automation & DevOps</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-main: #c9d1d9;
+            --accent-blue: #58a6ff;
+            --accent-green: #2ea44f;
+            --border-color: #30363d;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            width: 100%;
+            max-width: 1000px;
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        header h1 {
+            color: #ffffff;
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            color: var(--accent-blue);
+            margin: 0.5rem 0 0 0;
+            font-size: 1.1rem;
+        }
+
+        main {
+            width: 100%;
+            max-width: 1000px;
+            padding: 2rem 1rem;
+            box-sizing: border-box;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-blue);
+        }
+
+        .card h3 {
+            color: #ffffff;
+            margin-top: 0;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background-color: rgba(46, 164, 79, 0.15);
+            color: var(--accent-green);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: auto;
+            width: 100%;
+            text-align: center;
+            padding: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello World!</h1>
-    <p>This deployment was triggered fully from GitHub!</p>
+
+    <header>
+        <h1>SANTHOSH</h1>
+        <p>DevOps Pipelines & Automated Deployments Hub</p>
+    </header>
+
+    <main>
+        <h2>Current Automated Ecosystem</h2>
+        <div class="dashboard-grid">
+            
+            <!-- Card 1: CI/CD Status -->
+            <div class="card">
+                <h3>Jenkins Pipeline</h3>
+                <p>Monitors GitHub repository changes and builds code directly to live environments.</p>
+                <span class="status-badge">✓ Pipeline Active</span>
+            </div>
+
+            <!-- Card 2: Web Server Status -->
+            <div class="card">
+                <h3>Nginx Web Target</h3>
+                <p>Delivers high-performance, low-latency distribution of HTML production assets.</p>
+                <span class="status-badge">✓ Server Healthy</span>
+            </div>
+
+            <!-- Card 3: Git Hook Integration -->
+            <div class="card">
+                <h3>GitHub Integration</h3>
+                <p>Automated webhooks securely trigger continuous delivery jobs instantly upon code push.</p>
+                <span class="status-badge">✓ Webhook Synced</span>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Santhosh Automation Workspace. Live Compiled Asset.</p>
+    </footer>
+
+    <script>
+        // Automatic timestamp script to handle dynamic data locally
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
 </body>
 </html>
