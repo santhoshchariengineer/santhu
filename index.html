@@ -3,145 +3,366 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Santhosh | Automation & DevOps</title>
+    <title>Explore Kaiwara | Myth, Spirituality & Adventure</title>
     <style>
-        :root {
-            --bg-color: #0d1117;
-            --card-bg: #161b22;
-            --text-main: #c9d1d9;
-            --accent-blue: #58a6ff;
-            --accent-green: #2ea44f;
-            --border-color: #30363d;
+        /* Modern Reset and Typography */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
+            background-color: #f9f9fb;
+            color: #333;
+            line-height: 1.6;
         }
 
+        /* Hero Section Styling */
         header {
-            width: 100%;
-            max-width: 1000px;
-            padding: 2rem 1rem;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), 
+                        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            border-bottom: 1px solid var(--border-color);
+            color: #fff;
+            padding: 0 20px;
         }
 
         header h1 {
-            color: #ffffff;
-            margin: 0;
-            font-size: 2.5rem;
-            letter-spacing: 1px;
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
         }
 
         header p {
-            color: var(--accent-blue);
-            margin: 0.5rem 0 0 0;
+            font-size: 1.3rem;
+            max-width: 700px;
+            font-weight: 300;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+        }
+
+        nav a {
+            color: #4a5568;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #dd6b20;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+            scroll-margin-top: 80px;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: #2d3748;
+            margin-bottom: 10px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background-color: #dd6b20;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            margin-bottom: 40px;
             font-size: 1.1rem;
         }
 
-        main {
-            width: 100%;
-            max-width: 1000px;
-            padding: 2rem 1rem;
-            box-sizing: border-box;
+        /* Intro Quote Box */
+        .intro-box {
+            background-color: #fff;
+            border-left: 5px solid #dd6b20;
+            padding: 25px;
+            border-radius: 4px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            font-size: 1.1rem;
+            color: #4a5568;
+            margin-bottom: 50px;
         }
 
-        .dashboard-grid {
+        /* Attractions Grid */
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
         .card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
+            background-color: #fff;
             border-radius: 8px;
-            padding: 1.5rem;
-            transition: transform 0.2s ease, border-color 0.2s ease;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .card:hover {
-            transform: translateY(-3px);
-            border-color: var(--accent-blue);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
-        .card h3 {
-            color: #ffffff;
-            margin-top: 0;
+        .card-content {
+            padding: 25px;
         }
 
-        .status-badge {
-            display: inline-block;
-            background-color: rgba(46, 164, 79, 0.15);
-            color: var(--accent-green);
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: bold;
+        .card-content h3 {
+            font-size: 1.4rem;
+            color: #2d3748;
+            margin-bottom: 12px;
         }
 
-        footer {
-            margin-top: auto;
+        .card-content p {
+            color: #4a5568;
+            font-size: 0.95rem;
+        }
+
+        /* Quick Info Layout */
+        .info-table {
             width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .info-table th, .info-table td {
+            padding: 15px 20px;
+            text-align: left;
+        }
+
+        .info-table th {
+            background-color: #ee5a24;
+            color: white;
+            font-weight: 600;
+        }
+
+        .info-table tr:nth-child(even) {
+            background-color: #f7fafc;
+        }
+
+        /* Actionable Guidelines */
+        .guidelines {
+            background-color: #fffeb3;
+            border: 1px solid #ffe566;
+            padding: 25px;
+            border-radius: 8px;
+            color: #5c4300;
+        }
+
+        .guidelines h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .guidelines ul {
+            list-style-type: '✓ ';
+            margin-left: 20px;
+        }
+
+        .guidelines li {
+            margin-bottom: 8px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2d3748;
+            color: #a0aec0;
             text-align: center;
-            padding: 1.5rem;
-            border-top: 1px solid var(--border-color);
+            padding: 30px 20px;
+            margin-top: 60px;
             font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 8px;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.3rem; }
+            header p { font-size: 1rem; }
+            nav { flex-direction: column; align-items: center; }
+            nav a { margin: 8px 0; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Header Section -->
     <header>
-        <h1>SANTHOSH</h1>
-        <p>DevOps Pipelines & Automated Deployments Hub</p>
+        <h1>Explore Kaiwara</h1>
+        <p>A journey into the heart of Karnataka's vibrant mythology, serene spirituality, and breathtaking rocky landscapes.</p>
     </header>
 
-    <main>
-        <h2>Current Automated Ecosystem</h2>
-        <div class="dashboard-grid">
+    <!-- Navigation Sticky Bar -->
+    <nav>
+        <a href="#about">About</a>
+        <a href="#attractions">Key Attractions</a>
+        <a href="#travel-info">Travel Guide</a>
+    </nav>
+
+    <div class="container">
+        
+        <!-- About Section -->
+        <section id="about">
+            <div class="intro-box">
+                <strong>Historical Tapestry:</strong> Historically known as <em>Ekachakrapura</em> in the Dwapara-yuga, Kaiwara is the epic ground where the Pandavas lived incognito during exile, and where the mighty Bhima defeated the demon Bakasura. In modern times, it is revered as the divine seat of saint-poet Yogi Kaiwara Narayana Taatha.
+            </div>
+        </section>
+
+        <!-- Attractions Section -->
+        <section id="attractions">
+            <h2 class="section-title">Major Attractions</h2>
+            <p class="subtitle">What makes Kaiwara a perfect day-trip escape from the city.</p>
             
-            <!-- Card 1: CI/CD Status -->
-            <div class="card">
-                <h3>Jenkins Pipeline</h3>
-                <p>Monitors GitHub repository changes and builds code directly to live environments.</p>
-                <span class="status-badge">✓ Pipeline Active</span>
+            <div class="grid">
+                <!-- Card 1 -->
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Sri Amara Narayana Temple</h3>
+                        <p>A breathtaking temple dedicated to Lord Vishnu, closely connected with the history of Satya-yuga and later beautifully constructed/renovated during the Vijayanagara Empire. Features incredibly intricate granite stone pillar carvings.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Yogi Narayana Ashram</h3>
+                        <p>An ashram dedicated to the great bilingual poet-saint Thataiyya (1726–1836). It remains a focal point for spiritual, religious, and philanthropic work where free mass meals are served daily to visitors.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Kaiwara Betta (Trek)</h3>
+                        <p>Managed safely by the Forest Department (bookable on MyEcoTrip), this moderately challenging rock trail climbs past massive granite boulders up to the spectacular Mylapurabetta Viewpoint. Great for nature lovers.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Bhima Bakasura Hill & Cave</h3>
+                        <p>A rocky hill containing the historical Bheemalingeshwara temple. Mythological lore asserts that a cave here holds the remnants of the demon Bakasura, adding an intriguing atmosphere for history buffs.</p>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Kailasha Giri Cave Temples</h3>
+                        <p>Located roughly 7 km away from the main town, this hill is famous for its massive cave temples carved right out of rocks, containing shrines like Ambaji Durga and Chenna Keshava.</p>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Lakshmana Tirtha</h3>
+                        <p>Situated atop the hill, local lore says Lakshmana shot an arrow into the ground to fetch water to quench Sita's thirst, forming a pristine, historic pool alongside a temple to Chamundeshwari Devi.</p>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <!-- Card 2: Web Server Status -->
-            <div class="card">
-                <h3>Nginx Web Target</h3>
-                <p>Delivers high-performance, low-latency distribution of HTML production assets.</p>
-                <span class="status-badge">✓ Server Healthy</span>
+        <!-- Travel Guide Section -->
+        <section id="travel-info">
+            <h2 class="section-title">Traveler's Dashboard</h2>
+            <p class="subtitle">Quick details to seamlessly plan your weekend itinerary.</p>
+            
+            <table class="info-table">
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Distance</strong></td>
+                        <td>~70 km from Bengaluru city limits (approx. 1.5 to 2 hours drive)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Best Routes</strong></td>
+                        <td>Bengaluru - Hoskote Route OR Bengaluru - Devanahalli - Vijayapura Route</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Nearest Railway</strong></td>
+                        <td>Chikkaballapur Junction (Local buses and autos ply regularly to the foothill)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Best Time to Visit</strong></td>
+                        <td>Early morning (October to March) to beat the scorching afternoon sun on the rocks</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <br><br>
+
+            <!-- Travel Advice Guidelines Box -->
+            <div class="guidelines">
+                <h3>⚠️ Tips for a Safe & Impactful Visit</h3>
+                <ul>
+                    <li><strong>Monkeys Ahead:</strong> Watch your backpacks, food items, and gadgets safely as local monkeys are very active.</li>
+                    <li><strong>Strictly No Littering:</strong> Carry a small garbage collection bag with you to protect the eco-sensitive forest reserves.</li>
+                    <li><strong>Footwear Matters:</strong> Wear strong trekking shoes with solid grip; granite boulders get extremely slick after rain showers.</li>
+                    <li><strong>Timing Strategy:</strong> Try to scale the hills before 11:00 AM as the bare rocks capture and radiate intense thermal heat.</li>
+                </ul>
             </div>
+        </section>
 
-            <!-- Card 3: Git Hook Integration -->
-            <div class="card">
-                <h3>GitHub Integration</h3>
-                <p>Automated webhooks securely trigger continuous delivery jobs instantly upon code push.</p>
-                <span class="status-badge">✓ Webhook Synced</span>
-            </div>
+    </div>
 
-        </div>
-    </main>
-
+    <!-- Website Footer -->
     <footer>
-        <p>&copy; <span id="year"></span> Santhosh Automation Workspace. Live Compiled Asset.</p>
+        <p>&copy; 2026 Kaiwara Tourism Exploration Portal.</p>
+        <p>Crafted to preserve local heritage, history, and natural wanderlust.</p>
     </footer>
-
-    <script>
-        // Automatic timestamp script to handle dynamic data locally
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
 
 </body>
 </html>
