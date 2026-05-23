@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Fetch Code from SCM') {
             steps {
-                echo 'Source code synchronized successfully on Amazon Linux host.'
+                echo 'Source code synchronized successfully from GitHub.'
             }
         }
 
@@ -21,17 +21,15 @@ pipeline {
             }
         }
 
-        stage('Store Production Asset') {
-            steps {
-                archiveArtifacts artifacts: 'index.html', fingerprint: true
-            }
-        }
-
         stage('Deploy to Nginx Web Server') {
             steps {
-                // Copies the verified file directly to Nginx's live web root directory
+                // 1. Move the verified HTML file to Nginx's web root
                 sh 'cp index.html /usr/share/nginx/html/'
-                echo 'Deployment Successful! Code is now live on Nginx.'
+                
+                // 2. Move your photo file to Nginx's web root
+                sh 'cp image0.jpg /usr/share/nginx/html/'
+                
+                echo 'Deployment Successful! Code and profile image are live.'
             }
         }
     }
