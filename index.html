@@ -21,7 +21,7 @@
 
         /* Hero Section Styling */
         header {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), 
+            background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65)), 
                         url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
             height: 60vh;
             display: flex;
@@ -207,13 +207,57 @@
             margin-bottom: 8px;
         }
 
+        /* Developer Section Styling */
+        .developer-section {
+            background-color: #fff;
+            padding: 40px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            max-width: 600px;
+            margin: 60px auto 20px auto;
+        }
+
+        .dev-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #dd6b20;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .developer-section h3 {
+            font-size: 1.8rem;
+            color: #2d3748;
+            margin-bottom: 5px;
+        }
+
+        .dev-tag {
+            color: #dd6b20;
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .dev-bio {
+            color: #4a5568;
+            font-size: 1rem;
+            max-width: 450px;
+            margin: 0 auto;
+        }
+
         /* Footer */
         footer {
             background-color: #2d3748;
             color: #a0aec0;
             text-align: center;
             padding: 30px 20px;
-            margin-top: 60px;
+            margin-top: 40px;
             font-size: 0.9rem;
         }
 
@@ -232,13 +276,11 @@
 </head>
 <body>
 
-    <!-- Header Section -->
     <header>
         <h1>Explore Kaiwara</h1>
         <p>A journey into the heart of Karnataka's vibrant mythology, serene spirituality, and breathtaking rocky landscapes.</p>
     </header>
 
-    <!-- Navigation Sticky Bar -->
     <nav>
         <a href="#about">About</a>
         <a href="#attractions">Key Attractions</a>
@@ -247,20 +289,17 @@
 
     <div class="container">
         
-        <!-- About Section -->
         <section id="about">
             <div class="intro-box">
                 <strong>Historical Tapestry:</strong> Historically known as <em>Ekachakrapura</em> in the Dwapara-yuga, Kaiwara is the epic ground where the Pandavas lived incognito during exile, and where the mighty Bhima defeated the demon Bakasura. In modern times, it is revered as the divine seat of saint-poet Yogi Kaiwara Narayana Taatha.
             </div>
         </section>
 
-        <!-- Attractions Section -->
         <section id="attractions">
             <h2 class="section-title">Major Attractions</h2>
             <p class="subtitle">What makes Kaiwara a perfect day-trip escape from the city.</p>
             
             <div class="grid">
-                <!-- Card 1 -->
                 <div class="card">
                     <div class="card-content">
                         <h3>Sri Amara Narayana Temple</h3>
@@ -268,7 +307,6 @@
                     </div>
                 </div>
 
-                <!-- Card 2 -->
                 <div class="card">
                     <div class="card-content">
                         <h3>Yogi Narayana Ashram</h3>
@@ -276,7 +314,6 @@
                     </div>
                 </div>
 
-                <!-- Card 3 -->
                 <div class="card">
                     <div class="card-content">
                         <h3>Kaiwara Betta (Trek)</h3>
@@ -284,7 +321,6 @@
                     </div>
                 </div>
 
-                <!-- Card 4 -->
                 <div class="card">
                     <div class="card-content">
                         <h3>Bhima Bakasura Hill & Cave</h3>
@@ -292,7 +328,6 @@
                     </div>
                 </div>
 
-                <!-- Card 5 -->
                 <div class="card">
                     <div class="card-content">
                         <h3>Kailasha Giri Cave Temples</h3>
@@ -300,7 +335,6 @@
                     </div>
                 </div>
 
-                <!-- Card 6 -->
                 <div class="card">
                     <div class="card-content">
                         <h3>Lakshmana Tirtha</h3>
@@ -310,7 +344,6 @@
             </div>
         </section>
 
-        <!-- Travel Guide Section -->
         <section id="travel-info">
             <h2 class="section-title">Traveler's Dashboard</h2>
             <p class="subtitle">Quick details to seamlessly plan your weekend itinerary.</p>
@@ -344,7 +377,6 @@
 
             <br><br>
 
-            <!-- Travel Advice Guidelines Box -->
             <div class="guidelines">
                 <h3>⚠️ Tips for a Safe & Impactful Visit</h3>
                 <ul>
@@ -356,9 +388,15 @@
             </div>
         </section>
 
+        <section class="developer-section">
+            <img src="image0.jpg" alt="Santhosh S" class="dev-avatar">
+            <h3>Santhosh S</h3>
+            <span class="dev-tag">Lead Website Developer</span>
+            <p class="dev-bio">Proudly hailing from Kaiwara. Bringing local history, rich mythology, and beautiful landscapes to life through modern web engineering.</p>
+        </section>
+
     </div>
 
-    <!-- Website Footer -->
     <footer>
         <p>&copy; 2026 Kaiwara Tourism Exploration Portal.</p>
         <p>Crafted to preserve local heritage, history, and natural wanderlust.</p>
